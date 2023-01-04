@@ -12,7 +12,7 @@ export default function Dog({image,id}) {
         {image.message.map((src)=>{
          return(
            <li>
-             <Image src={src} alt="" layout='fill' />
+             <Image src={src} alt="" objectFit='cover' layout='fill' />
            </li>
          )
        })}

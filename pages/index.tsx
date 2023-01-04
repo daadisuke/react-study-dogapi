@@ -3,13 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '/styles/Home.module.css'
 
-export default function Dogs(data) {
-  
+export default function Dogs({dogs}: {dogs: string[]}) {
+          console.log(dogs)
   return (
     <div className="wrapper">
       <h1 className={styles.ttlLarge}>犬種一覧を表示</h1>
       <ul className={styles.cardList}>
-       {data.dogs.message.map((dog)=>{
+       {dogs.message.map((dog)=>{
          return(
            <li className={styles.card}>
              <Link href={`/dog/${dog}`}>
