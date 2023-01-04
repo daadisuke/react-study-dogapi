@@ -2,14 +2,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Dog.module.css'
 
-export default function Dog({image,id}) {
+export default function Dog(props) {
+
+  type props = {
+    id: string;
+    image: string;
+  };
+
   // console.log(id);
   return (
      <div className="wrapper">
-      <h1 className={styles.ttlLarge}>{id}</h1>
+      <h1 className={styles.ttlLarge}>{props.id}</h1>
         {/* <p><Image src={dog} alt="" width={100} height={40} /></p> */}
         <ul className={styles.cardListDetail}>
-        {image.message.map((src)=>{
+        {props.image.message.map((src)=>{
          return(
            <li>
              <Image src={src} alt="" objectFit='cover' layout='fill' />
