@@ -2,11 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Dog.module.css'
 
-export default function Dog({image}) {
-  // console.log(id)
+export default function Dog({image,id}) {
+  // console.log(id);
   return (
      <div className="wrapper">
-      {/* <h1>{id}</h1> */}
+      <h1 className={styles.ttlLarge}>{id}</h1>
         {/* <p><Image src={dog} alt="" width={100} height={40} /></p> */}
         <ul className={styles.cardListDetail}>
         {image.message.map((src)=>{
@@ -51,7 +51,10 @@ export const getStaticProps=async (context)=>{
   const image=await res.json()
 
   return{
-    props:{image}
+    props:{
+      image,
+      id
+    }
   }
 }
 
